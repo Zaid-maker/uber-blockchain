@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
 import Image from 'next/image'
+import avatar from '../temp/avatar.jpg'
 import { BsPerson } from 'react-icons/bs'
+import { useContext } from 'react'
 
 const style = {
   wrapper: `h-16 w-full bg-black text-white flex md:justify-around items-center px-60 fixed z-20`,
@@ -28,7 +29,14 @@ const Navbar = () => {
       <div className={style.rightMenu}>
         <div className={style.menuItem}>Help</div>
         <div className={style.menuItem}>DEVMIRZA</div>
-        <div className={style.userImageContainer}></div>
+        <div className={style.userImageContainer}>
+          <Image
+            src={avatar}
+            className={style.userImage}
+            width={40}
+            height={40}
+          />
+        </div>
         {currentAccount ? (
           <div>
             {currentAccount.slice(0, 5)}...{currentAccount.slice(39)}
